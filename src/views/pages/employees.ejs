@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body class="container">
+    <header><%- include('../partials/header'); %></header>
+
+    <main>
+      <div class="jumbotron">
+        <h2 class="header-1">
+          Employees
+          <a href="/employee">
+            <button type="submit" class="btn btn-primary">Add</button>
+          </a>
+        </h2>
+      </div>
+      <div class="jumbotron">
+        <div class="employee-content">
+          <%- include('../partials/employees.ejs') %>
+        </div>
+      </div>
+    </main>
+
+    <footer><%- include('../partials/footer'); %></footer>
+  </body>
+</html>

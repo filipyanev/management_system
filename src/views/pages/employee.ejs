@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body class="container">
+    <header><%- include('../partials/header'); %></header>
+
+    <main>
+      <div class="jumbotron">
+        <h2><%= employee.name %></h2>
+      </div>
+      <div class="jumbotron">
+        <div class="employee-content">
+          <%- include('../partials/employee.ejs') %>
+        </div>
+      </div>
+
+      <%if (comments.length > 0) { %>
+      <div class="jumbotron">
+        <div class="employee-content">
+          <%- include('../partials/comments.ejs') %>
+        </div>
+      </div>
+      <% } %>
+
+      <div class="jumbotron">
+        <div class="employee-content">
+          <%- include('../partials/add-comment.ejs') %>
+        </div>
+      </div>
+    </main>
+
+    <footer><%- include('../partials/footer'); %></footer>
+  </body>
+</html>

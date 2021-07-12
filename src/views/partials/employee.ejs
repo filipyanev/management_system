@@ -1,0 +1,30 @@
+<div>
+  <%if (employee) { %>
+  <ul class="list-group">
+    <table class="table table-striped table-hover">
+      <tbody>
+        <tr>
+          <td>Department</td>
+          <td><%= employee.department %></td>
+        </tr>
+        <tr>
+          <td>Address</td>
+          <td><%= employee.address %></td>
+        </tr>
+        <tr>
+          <td>Line Manager</td>
+          <td><%= employee.line_manager %></td>
+        </tr>
+        <tr>
+          <td>Joined</td>
+          <td><%= employee.date_joined %></td>
+        </tr>
+        <tr>
+          <td>Salary</td>
+          <td><%= employee.salary %></td>
+        </tr>
+      </tbody>
+    </table>
+  </ul>
+  <% } %>
+</div>

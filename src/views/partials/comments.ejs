@@ -1,0 +1,34 @@
+<ul class="list-group">
+  <%if (comments.length > 0) { %>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Comment</th>
+        <th style="min-width: 150px" scope="col">Author</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(let i=0; i < comments.length; i++) { %>
+      <tr>
+        <td><%= comments[i].comment_content %></td>
+        <td style="min-width: 150px"><%= comments[i].author %></td>
+        <td style="text-align: right; min-width: 120px">
+          <button
+            class="btn btn-outline-secondary"
+            onclick="window.location = '/comments/<%= employee.id %>/<%= comments[i].id %>'"
+          >
+            <i class="bi-pencil"></i>
+          </button>
+          <button
+            class="btn btn-outline-secondary"
+            onclick="deleteComment(<%= comments[i].id %>, <%= employee.id %>)"
+          >
+            <i class="bi-trash"></i>
+          </button>
+        </td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+  <% } %>
+</ul>
