@@ -11,7 +11,7 @@ router.get('/comments', async (req, res) => {
 });
 
 
-// Get aignle component update page.
+// Get signle comment update page.
 router.get('/comments/:employeeId/:commentId', async (req, res) => {
     const { employeeId, commentId } = req.params;
     const employeeIdNumber = parseInt(employeeId);
@@ -31,6 +31,7 @@ router.get('/comments/:employeeId/:commentId', async (req, res) => {
 // Create comment.
 router.post('/comments/:employeeId/create', async (req, res) => {
     const { employeeId } = req.params;
+    // TODO: add body validation
     await CommentInstance.createComment(employeeId, req.body);
     return res.redirect(`/employees/${employeeId}`)
 });
@@ -38,6 +39,7 @@ router.post('/comments/:employeeId/create', async (req, res) => {
 // Update comment.
 router.post('/comments/:employeeId/:commentId', async (req, res) => {
     const { commentId, employeeId } = req.params;
+    // TODO: add body validation
     await CommentInstance.updateComment(commentId, req.body);
     return res.redirect(`/employees/${employeeId}`)
 });

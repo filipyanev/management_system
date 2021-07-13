@@ -41,6 +41,7 @@ router.get('/employee', async (req, res) => {
 
 // Create employee.
 router.post('/employee', async (req, res) => {
+        // TODO: add body validation
         await EmployeeInstance.createEmployee(req.body);
         return res.redirect('/employees')
     });
